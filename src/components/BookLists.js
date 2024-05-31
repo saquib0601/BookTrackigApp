@@ -36,7 +36,7 @@ const BooksList = () => {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       {books.map(book => (
         <div key={book.id}>
-          <BookCard img={book.volumeInfo.imageLinks.thumbnail} 
+          <BookCard description={book.volumeInfo.description} img={book.volumeInfo.imageLinks.thumbnail} 
             title={book.volumeInfo.title} author={book.volumeInfo.authors ?? []}/>
         </div>
       ))}
