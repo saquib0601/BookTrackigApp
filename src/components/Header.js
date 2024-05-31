@@ -5,7 +5,7 @@ import LOGO from '../assests/images/logo.png'
 const Header = () => {
 
   return (
-    <div className="sticky top-0 px-8 py-4 bg-blue-500 z-10 w-full flex justify-between items-center mb-2.5">
+    <div className="sticky top-0 px-8 py-4 bg-gradient-to-b from-gray-800 to-gray-400 z-10 w-full flex justify-between items-center mb-2.5">
       <h1 className="font-bold text-black font-sans text-xl">Book Tracking App</h1>
       <img className="w-44"
       src={LOGO} 
