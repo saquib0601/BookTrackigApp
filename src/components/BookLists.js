@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import BookCard from './BookCard';
+import Header from './Header';
 
 const BooksList = () => {
   const [books, setBooks] = useState([]);
@@ -33,13 +34,17 @@ const BooksList = () => {
   // }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div>
+      <Header/>
+    
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 ml-10">
       {books.map(book => (
         <div key={book.id}>
           <BookCard description={book.volumeInfo.description} img={book.volumeInfo.imageLinks.thumbnail} 
             title={book.volumeInfo.title} author={book.volumeInfo.authors ?? []}/>
         </div>
       ))}
+    </div>
     </div>
   );
 };

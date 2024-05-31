@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { useNavigate } from "react-router-dom";
+import Header from "./Header";
 
 export default function Login() {
   const [formValue, setFormValue] = useState({
@@ -13,6 +14,8 @@ export default function Login() {
   const navigate = useNavigate();
 
   return (
+    <div>
+    <Header/>
     <Grid
       container
       justifyContent={"center"}
@@ -75,5 +78,6 @@ export default function Login() {
         </Grid>
       </Grid>
     </Grid>
+    </div>
   );
 }
