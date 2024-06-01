@@ -73,7 +73,8 @@ export default function BookCard({img, title, author, description, id, index, mo
           component="img"
           height="100"
           image={img}
-          alt="green iguana"
+          alt="Book_Card_Image" // Alt text for accessibility and SEO
+          loading="lazy" // Lazy loading attribute
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">

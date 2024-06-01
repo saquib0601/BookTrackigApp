@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState, useCallback } from "react";
 import BookCard from "./BookCard";
 import Header from "./Header";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
@@ -8,6 +7,8 @@ import useViewMode from "../hooks/useViewMode";
 import ViewModeToggle from "./ViewModeToggle";
 import useFetchBooks from "../hooks/useFetchBooks";
 import { Book_Collection_API } from "../utils/constants";
+import useLoading from "../hooks/useLoading";
+import useError from "../hooks/useError";
 
 const BooksList = () => {
   const { data: books, isLoading, error } = useFetchBooks(Book_Collection_API);
@@ -20,7 +21,8 @@ const BooksList = () => {
     setFilteredBooks(books);
   }, [books]);
 
-  const handleSearch = (e) => {
+  // Using useCallback to memoize functions and prevent them from being re-created on every render.
+  const handleSearch = useCallback((e) => {
     const query = e.target.value.toLowerCase();
     const filtered = books.filter(
       (book) =>
@@ -32,23 +34,21 @@ const BooksList = () => {
     );
     setFilteredBooks(filtered);
     setSearchQuery(query);
-  };
+  }, [books]);
 
-  const moveCard = (dragIndex, hoverIndex) => {
+  const moveCard = useCallback((dragIndex, hoverIndex) => {
     const dragBook = filteredBooks[dragIndex];
     const updatedBooks = [...filteredBooks];
     updatedBooks.splice(dragIndex, 1);
     updatedBooks.splice(hoverIndex, 0, dragBook);
     setFilteredBooks(updatedBooks);
-  };
+  }, [filteredBooks]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  const loadingComponent = useLoading(isLoading);
+  const errorComponent = useError(error);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
+  if (loadingComponent) return loadingComponent;
+  if (errorComponent) return errorComponent;
 
   return (
     <DndProvider backend={HTML5Backend}>
