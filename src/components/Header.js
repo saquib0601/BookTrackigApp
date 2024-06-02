@@ -53,23 +53,22 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="sticky top-0 px-8 py-4 bg-gradient-to-b from-blue-200 to-sky-100 z-10 w-full flex justify-between items-center mb-2.5">
+    <div 
+    className=" bg-[#d0d0d0] sticky top-0 px-8 py-4 z-10 w-full flex justify-between items-center mb-2.5">
       <img className="w-44" src={LOGO} alt="logo" />
-      <h1 className="font-bold text-black font-sans text-xl">
-        Book Tracking App
-      </h1>
-
       {user && (
-        <div className="flex p-2">
-          <img className="w-12 h-12" alt="usericon" src={USER_AVATAR} />
-          <Button
-            className="font-bold text-white"
-            onClick={handleSignOut}
-            variant="contained"
-          >
-            SignOut
-          </Button>
-          <div>{user.displayName}</div>
+        <div className="flex items-center space-x-4">
+          <img className="w-12 h-12 rounded-full" alt="usericon" src={USER_AVATAR} />
+          <div className="flex flex-col items-start">
+            <span className="font-semibold">{user.displayName}</span>
+            <Button
+              className="font-bold text-white mt-1"
+              onClick={handleSignOut}
+              variant="contained"
+            >
+              Sign Out
+            </Button>
+          </div>
         </div>
       )}
     </div>

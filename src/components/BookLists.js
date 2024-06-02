@@ -60,7 +60,7 @@ const BooksList = () => {
             placeholder="Search Book..."
             value={searchQuery}
             onChange={handleSearch}
-            className="w-full p-2 border border-gray-300 rounded-lg"
+            className="w-3/12 p-2 border border-gray-300 rounded-lg"
           />
           <ViewModeToggle
             isGridView={isGridView}

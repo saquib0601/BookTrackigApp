@@ -9,6 +9,7 @@ import { auth } from "../utils/firebase";
 import { addUser } from "../utils/userReducer";
 import { checkValidData } from "../utils/validate";
 import Header from "./Header";
+import Grid from "@mui/material/Grid";
 
 
 const Login = () => {
@@ -90,9 +91,11 @@ const Login = () => {
   return (
     <div>
       <Header />
+      <Grid container justifyContent={"center"} alignItems={"center"}>
+      <Grid style={{border:'10px'}} item lg={4} md={4} sm={8} xs={12}>
       <form
+        className="p-[50px]"
         onSubmit={(e) => e.preventDefault()}
-        className="absolute p-12 bg-black w-3/12 my-36 mx-auto right-0 left-0 text-white bg-opacity-80"
       >
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
@@ -102,34 +105,37 @@ const Login = () => {
             ref={name}
             type="text"
             placeholder="Full Name"
-            className="p-4 my-4 w-full bg-gray-700"
+            className="p-4 my-4 w-full bg-white rounded-[8px]"
           />
         )}
         <input
           ref={email}
           type="text"
           placeholder="Email  Address"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="p-4 my-4 w-full bg-white rounded-[8px]"
         />
         <input
           ref={password}
           type="password"
           placeholder="Password"
-          className="p-4 my-4 w-full bg-gray-700"
+          className="p-4 my-4 w-full bg-white rounded-[8px]"
         />
         <p className="text-red-500 font-bold text-lg p-2">{errorMessage}</p>
         <button
           onClick={handleButtonClick}
-          className="p-4 my-4 bg-red-500 rounded-lg w-full cursor-pointer"
+          className="p-4 my-4 rounded-lg w-full cursor-pointer bg-[#5ce8e1] font-medium"
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
-        <p className="py-4 cursor-pointer" onClick={toggleSignInForm}>
+        <p className="py-4 cursor-pointer font-medium"
+        onClick={toggleSignInForm}>
           {isSignInForm
             ? "New to BookApp? SignUp Now"
             : "Already Registered ? SignIn Now"}
         </p>
       </form>
+      </Grid>
+      </Grid>
     </div>
   );
 };
