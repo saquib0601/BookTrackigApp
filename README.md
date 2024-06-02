@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+# Book Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+The Book Tracker App is a web application that allows users to track their books. Users can sign up, sign in, sign out, search for books, and manage their personal book list using drag-and-drop functionality. The app leverages Firebase for authentication and Firestore for data storage. The frontend is built with React, Redux, and Tailwind CSS, and incorporates Material-UI (MUI) for some components.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+1. **User Authentication**: Sign up, sign in and sign out functionality using Firebase Authentication.
+2. **Book List**: Display a list of books fetched from an external API.
+3. **Search**: Search functionality to filter books by title or author.
+4. **Drag and Drop**: Rearrange books using drag-and-drop.
+5. **Responsive Design**: Responsive UI designed with Tailwind CSS and MUI.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### To get started with the project, follow these steps:
 
-### `npm test`
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/saquib0601/BookTrackigApp.git
+   cd booktrackingapp
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Switch to branch master**
 
-### `npm run build`
+3. **Install dependencies**:
+    ```bash
+    npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Run the app**:
+    ```bash
+    npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies Used
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- React Router
+- Redux
+- Lazy Loading for Book Images to improve performance
+- Tailwind CSS
+- Firebase Authentication
+- React DnD (Drag and Drop)
+- Axios
+- Error Boundary
+- Custom Hooks
+- Re-rendering issue using callback
+- Integrated Google Books API
 
-### `npm run eject`
+## Folder Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- `src/assests/images`: Contains all Images used in the app
+- `src/components`: Contains all React components
+- `src/components/dialog`: Contains Dialog used in the app 
+- `src/hooks`: Contains custom hooks used in the app
+- `src/utils`: Contains utility functions and configurations, such as Firebase, Redux setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contact
+- For any questions or suggestions, feel free to conect with me.
