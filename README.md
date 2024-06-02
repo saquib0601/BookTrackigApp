@@ -21,15 +21,23 @@ The Book Tracker App is a web application that allows users to track their books
    git clone https://github.com/saquib0601/BookTrackigApp.git
    cd booktrackingapp
 
-2. **Switch to branch master**
-
-3. **Install dependencies**:
+2. **Install dependencies**:
     ```bash
     npm install
 
-4. **Run the app**:
+3. **Run the app**:
     ```bash
     npm start
+
+## Deployment
+
+The app is deployed and can be accessed at [https://book-trackig-app.vercel.app/login].
+
+## User Validation
+
+- **Email Address**: Should be a valid email format.
+- **Password**: Should be at least 8 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character. Example: "@abcdef01"
+
 
 ## Technologies Used
 
@@ -55,4 +63,4 @@ The Book Tracker App is a web application that allows users to track their books
 - `src/utils`: Contains utility functions and configurations, such as Firebase, Redux setup
 
 ## Contact
-- For any questions or suggestions, feel free to conect with me.
+- For any questions or suggestions, feel free to connect with me.
